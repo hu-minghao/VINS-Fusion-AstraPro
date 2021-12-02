@@ -1,0 +1,5 @@
+<launch>
+<node pkg="vins" type="vins_node" name="vins_estimator" args="/home/nvidia/SLAM_CODE/VINS/src/VINS-Fusion-RGBD/config/realsense/realsense_depth_imu_config_astrapro.yaml" output="screen"/>
+<node pkg="tf" type="static_transform_publisher" name="vins_move_tf_4" args="0 0 0 0 0 0 world map 20" />
+<node pkg="tf" type="static_transform_publisher" name="base2camera_broadcaster" args="0.4615 0.019 0.233 0 0 0 /base_link /camera_link 20" />
+</launch>
